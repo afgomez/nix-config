@@ -31,6 +31,11 @@
         vim
         zoxide
       ];
+      
+      environment.variables = {
+        # Fix the default pager
+        PAGER = "less -FRXi";
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
