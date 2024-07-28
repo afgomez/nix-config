@@ -51,4 +51,84 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.git = {
+    enable = true;
+    
+    userEmail = "antarticonorte@gmail.com";
+    userName = "Alejandro Fernández Gómez";
+
+    ignores = [
+      # MacOS
+      ".DS_Store"
+      "._*"
+
+      # Editors
+      "*~"
+      "*.swp"
+      ".nova"
+      ".zed"
+      ".vscode"
+    ];
+
+    aliases = {
+      co = "checkout";
+      st = "status";
+
+      ci = "commit"; 
+      amend = "commit --amend";
+
+      graph = "log --graph --oneline";
+      mine = ''!"git log --author=$(git config --get user.email)"'';
+    };
+
+    extraConfig = {
+      branch = {
+        autoSetupRebase = true;
+      };
+
+      checkout = {
+        defaultRemote = "origin";
+      };
+
+      commit = {
+        verbose = true;
+      };
+      
+      diff = {
+        algorithm = "historgram";
+      };
+
+      grep = {
+        lineNumber = true;
+      };
+
+      help = {
+        autoCorrect = 1;
+      };
+
+      init = {
+        defaultBranch = "main";
+      };
+
+      pull = {
+        rebase = true;
+      };
+
+      push = {
+        autoSetupRemote = true;
+      };
+
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+        updateRefs = true;
+      };
+    };
+
+    difftastic = {
+      enable = true;
+      background = "dark";
+    };
+  };
 }
