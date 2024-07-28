@@ -8,6 +8,8 @@
   
   # Don't print "Last login" header 
   home.file.".hushlogin".text = "";
+  
+  home.file.".zshrc.d".source = ./dotfiles/zshrc.d;
 
   home.sessionPath = [
     "$HOME/bin"
@@ -41,6 +43,14 @@
       save = 100000;
       ignorePatterns = [ "exit" "clear" "ls" "fg" "bg" ];
     };
+    
+    initExtraFirst = ''
+    if [ -d "$HOME/.zshrc.d" ]; then
+      for file in $HOME/.zshrc.d/*.zsh; do
+        source "$file"
+      done
+    fi
+    '';
 
     initExtra = ''
     if [ -e "$HOME/.localrc" ]; then
