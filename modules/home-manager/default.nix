@@ -1,4 +1,4 @@
-{ home-manager, pkgs, ... }: {
+{ home-manager, pkgs, config, ... }: {
   # Let home-manager manage itself
   programs.home-manager.enable = true;
   
@@ -24,6 +24,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     CLICOLOR = 1;
+
+    JJ_CONFIG = "${config.xdg.configHome}/jj/config.toml";
   };
 
   programs.zsh = {
@@ -129,6 +131,26 @@
     difftastic = {
       enable = true;
       background = "dark";
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Alejandro Fernández Gómez";
+        email = "antarticonorte@gmail.com";
+      };
+
+      ui = {
+        default-command = "log";
+        diff-editor = ":builtin";
+        diff.tool = "difft";
+      };
+
+      merge-tools.difft = {
+        diff-args = ["--color=always" "$left" "$right" ];
+      };
     };
   };
 }
