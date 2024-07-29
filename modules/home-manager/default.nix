@@ -7,24 +7,24 @@
 }: {
   # Let home-manager manage itself
   programs.home-manager.enable = true;
-  
-  home.stateVersion = "24.05"; 
-  
+
+  home.stateVersion = "24.05";
+
   home.preferXdgDirectories = true;
-  
-  # Don't print "Last login" header 
+
+  # Don't print "Last login" header
   home.file.".hushlogin".text = "";
-  
+
   home.file.".zshrc.d".source = ./dotfiles/zshrc.d;
 
   home.sessionPath = [
     "$HOME/bin"
   ];
-  
+
   home.shellAliases = {
     ls = "ls -F";
     vim = "nvim";
-    
+
     nixswitch = "darwin-rebuild switch --flake ~/nix-config";
     nixup = "nix flake update ~/nix-config && nix-switch";
   };
@@ -45,28 +45,28 @@
     enable = true;
     enableCompletion = true;
     autocd = true;
-    cdpath = [ "$HOME/code" ];
+    cdpath = ["$HOME/code"];
 
     history = {
       ignoreDups = true;
       ignoreSpace = true;
       size = 100000;
       save = 100000;
-      ignorePatterns = [ "exit" "clear" "ls" "fg" "bg" ];
+      ignorePatterns = ["exit" "clear" "ls" "fg" "bg"];
     };
-    
+
     initExtraFirst = ''
-    if [ -d "$HOME/.zshrc.d" ]; then
-      for file in $HOME/.zshrc.d/*.zsh; do
-        source "$file"
-      done
-    fi
+      if [ -d "$HOME/.zshrc.d" ]; then
+        for file in $HOME/.zshrc.d/*.zsh; do
+          source "$file"
+        done
+      fi
     '';
 
     initExtra = ''
-    if [ -e "$HOME/.localrc" ]; then
-      source $HOME/.localrc
-    fi
+      if [ -e "$HOME/.localrc" ]; then
+        source $HOME/.localrc
+      fi
     '';
   };
 
@@ -77,7 +77,7 @@
 
   programs.git = {
     enable = true;
-    
+
     userEmail = "antarticonorte@gmail.com";
     userName = "Alejandro Fernández Gómez";
 
@@ -98,7 +98,7 @@
       co = "checkout";
       st = "status";
 
-      ci = "commit"; 
+      ci = "commit";
       amend = "commit --amend";
 
       graph = "log --graph --oneline";
@@ -117,7 +117,7 @@
       commit = {
         verbose = true;
       };
-      
+
       diff = {
         algorithm = "histogram";
       };
@@ -170,7 +170,7 @@
       };
 
       merge-tools.difft = {
-        diff-args = ["--color=always" "$left" "$right" ];
+        diff-args = ["--color=always" "$left" "$right"];
       };
     };
   };

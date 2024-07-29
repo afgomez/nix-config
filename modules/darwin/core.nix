@@ -16,7 +16,7 @@ _: {
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh = {
-    enable = true;  # default shell on catalina
+    enable = true; # default shell on catalina
     enableCompletion = true;
   };
 
@@ -34,4 +34,3 @@ _: {
     home = "/Users/afgomez";
   };
 }
-
