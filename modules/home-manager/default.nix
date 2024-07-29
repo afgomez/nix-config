@@ -32,8 +32,6 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     CLICOLOR = 1;
-
-    JJ_CONFIG = "${config.xdg.configHome}/jj/config.toml";
   };
 
   home.packages = [
