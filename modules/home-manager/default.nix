@@ -1,4 +1,10 @@
-{ home-manager, pkgs, config, ... }: {
+{
+  home-manager,
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   # Let home-manager manage itself
   programs.home-manager.enable = true;
   
@@ -29,6 +35,11 @@
 
     JJ_CONFIG = "${config.xdg.configHome}/jj/config.toml";
   };
+
+  home.packages = [
+    # FIXME figure out how to pass `system` here
+    inputs.nvim-af.packages.aarch64-darwin.default
+  ];
 
   programs.zsh = {
     enable = true;

@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ 
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
     # CLI
     bat
     difftastic
@@ -10,12 +10,10 @@
     jq
     jujutsu
     less
-    neovim
     ripgrep
     tlrc
     tokei
     tree
-    vim
     zoxide
   ];
 }
