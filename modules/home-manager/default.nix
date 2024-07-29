@@ -96,7 +96,7 @@
 
     extraConfig = {
       branch = {
-        autoSetupRebase = true;
+        autoSetupRebase = "always";
       };
 
       checkout = {
@@ -108,7 +108,7 @@
       };
       
       diff = {
-        algorithm = "historgram";
+        algorithm = "histogram";
       };
 
       grep = {
