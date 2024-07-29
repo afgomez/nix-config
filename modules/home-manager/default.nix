@@ -26,7 +26,7 @@
     vim = "nvim";
 
     nixswitch = "darwin-rebuild switch --flake ~/nix-config";
-    nixup = "nix flake update ~/nix-config && nix-switch";
+    nixupdate = "nix flake update ~/nix-config && nixswitch";
   };
 
   home.sessionVariables = {
