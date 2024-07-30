@@ -10,6 +10,7 @@
     jq
     jujutsu
     less
+    nodejs_20
     ripgrep
     tlrc
     tokei
