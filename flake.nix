@@ -20,9 +20,24 @@
     home-manager,
     ...
   }: {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Magrathea-II
+    # Own laptop
     darwinConfigurations."Magrathea-II" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./modules/darwin
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.afgomez.imports = [./modules/home-manager];
+            extraSpecialArgs = {inherit inputs;};
+          };
+        }
+      ];
+    };
+
+    # Work laptop
+    darwinConfigurations."Lamuella" = nix-darwin.lib.darwinSystem {
       modules = [
         ./modules/darwin
         home-manager.darwinModules.home-manager
