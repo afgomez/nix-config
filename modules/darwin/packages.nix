@@ -12,7 +12,7 @@
     less
     nodejs_20
     ripgrep
-    tlrc
+    tealdeer
     tokei
     tree
     zoxide
