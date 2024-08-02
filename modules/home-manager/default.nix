@@ -62,6 +62,8 @@
     '';
 
     initExtra = ''
+      . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+
       if [ -e "$HOME/.localrc" ]; then
         source $HOME/.localrc
       fi

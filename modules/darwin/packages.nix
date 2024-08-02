@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # CLI
+    asdf-vm
     bat
     difftastic
     fd
@@ -10,7 +11,6 @@
     jq
     jujutsu
     less
-    nodejs_20
     ripgrep
     tealdeer
     tokei
