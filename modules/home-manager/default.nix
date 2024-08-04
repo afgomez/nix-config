@@ -75,6 +75,11 @@
     enableZshIntegration = true;
   };
 
+  programs.ripgrep = {
+    enable = true;
+    arguments = ["--hidden" "--smart-case" "--glob=!.{git,jj}/*"];
+  };
+
   programs.git = {
     enable = true;
 
