@@ -13,6 +13,7 @@
     jujutsu
     less
     ripgrep
+    rustup
     tealdeer
     tokei
     tree
