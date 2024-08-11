@@ -13,6 +13,7 @@
     jujutsu
     less
     ripgrep
+    rm-improved
     rustup
     tealdeer
     tokei
