@@ -4,6 +4,7 @@
     asdf-vm
     bat
     difftastic
+    exercism
     fd
     fzf
     gh
