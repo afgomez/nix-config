@@ -40,6 +40,7 @@
     darwinConfigurations."Lamuella" = nix-darwin.lib.darwinSystem {
       modules = [
         ./modules/darwin
+        ./modules/darwin/work-packages.nix
         home-manager.darwinModules.home-manager
         {
           home-manager = {
