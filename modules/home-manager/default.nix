@@ -107,7 +107,7 @@
       amend = "commit --amend";
 
       graph = "log --graph --oneline";
-      mine = ''!"git log --author=$(git config --get user.email)"'';
+      mine = "! git log --author=$(git config --get user.email)";
     };
 
     extraConfig = {
