@@ -106,7 +106,7 @@
       ci = "commit";
       amend = "commit --amend";
 
-      graph = "log --graph --oneline";
+      graph = "log --graph --oneline --format=jjish";
       mine = "! git log --author=$(git config --get user.email)";
     };
 
@@ -137,6 +137,10 @@
 
       init = {
         defaultBranch = "main";
+      };
+
+      pretty = {
+        jjish = "%C(auto,brightmagenta)%h%C(reset) %C(auto,yellow)%an%C(reset) %C(auto,cyan)%ad%C(reset) %C(auto,magenta)%D%C(reset)%n%s";
       };
 
       pull = {
