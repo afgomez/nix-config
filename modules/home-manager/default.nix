@@ -110,6 +110,15 @@
       mine = "! git log --author=$(git config --get user.email)";
     };
 
+    includes = [
+      {
+        condition = "hasconfig:remote.*.url:git@github.com:seenons/**";
+        contents = {
+          user.email = "alejandro@seenons.com";
+        };
+      }
+    ];
+
     extraConfig = {
       branch = {
         autoSetupRebase = "always";
