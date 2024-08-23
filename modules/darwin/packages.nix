@@ -12,6 +12,7 @@
     jq
     jujutsu
     less
+    presenterm
     ripgrep
     rm-improved
     rustup
