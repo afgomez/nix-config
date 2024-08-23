@@ -6,6 +6,7 @@
     difftastic
     exercism
     fd
+    fswatch
     fzf
     gh
     git
