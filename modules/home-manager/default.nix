@@ -16,6 +16,7 @@
   home.file.".hushlogin".text = "";
 
   home.file.".zshrc.d".source = ./dotfiles/zshrc.d;
+  xdg.configFile."ghostty".source = ./dotfiles/ghostty;
 
   home.sessionPath = [
     "$HOME/bin"
